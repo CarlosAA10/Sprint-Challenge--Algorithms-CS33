@@ -18,17 +18,16 @@ def count_th(word):
         # print(word[0:2])
         
         
-        if word[0] == 't' and word[1] == 'h':
+        if word[0:1] == 'th':
 
             
             # print(word[0:2])
             # print(word[2:len(word)])
-            # print(word[0])
-            word = word[1:len(word)]
-            return 1 + count_th(word)
+            # print(word[0]
+            return count_th(word[len(word) - 1:]) + 1
             # print(th_count)
-        else:
-            return count_th(word[1:len(word)])
+        
+        return count_th(word[1:])
             
             
     
