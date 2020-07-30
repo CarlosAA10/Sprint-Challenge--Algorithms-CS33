@@ -9,32 +9,19 @@ def count_th(word):
     # cur_letter = 0
     # next_letter = 1
 
-  
+    if len(word) < 2: 
+        return 0
+    if word[0] is 't' and word[1] is 'h':
 
-    
-
-    if len(word) >= 2:
-
-        # print(word[0:2])
-        
-        
-        if word[0:1] == 'th':
-
-            
-            # print(word[0:2])
-            # print(word[2:len(word)])
-            # print(word[0]
-            return count_th(word[len(word) - 1:]) + 1
-            # print(th_count)
-        
+        return 1 + count_th(word[1:])
+    else:
         return count_th(word[1:])
             
-            
     
 
 
 
-a_word = 'ththeth'
+a_word = 'ththeththtt'
 print(a_word[2:len(a_word)])
 
 print(count_th(a_word))
