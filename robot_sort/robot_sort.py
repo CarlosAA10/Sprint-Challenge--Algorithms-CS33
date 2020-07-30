@@ -97,7 +97,75 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        # if you can move right, i want to compare current value with next value
+        # if current is more than next, swap
+        # if current is less than next, move right
+        # if current is same as next , move right
+        # then you will check if you can move left, 
+        # then you will compare backwards, this is the only way to traverse through the array
+        # on the way back we will compare if current values are graeater than the previous index
+        # if they are continue moving left, if current is less than the previous index, swap
+        self.set_light_on()
+
+        while self.light_is_on():
+
+            self.swap_item() # replaces current None item with the firs element in the list
+
+            while self.can_move_right():
+
+                self.move_right()
+
+                if self.compare_item() == 1:
+
+                    self.swap_item()
+                
+            while self.can_move_left() and self.compare_item() is not None:
+
+                self.move_left()
+
+                
+            self.swap_item()
+
+            if self.can_move_right():
+
+                self.move_right()
+            
+            else: 
+                self.set_light_off()
+
+
+        # self._item then becomes self.list[0]
+        # if self.compare_item() 
+
+        # keep moving right until your next is false and your previous is a value , that's how you know you've reached the end
+        # if can_move_right is not False: goes to the right until no more then we want to traverse backwards
+
+                
+                # if current number is less than the next item in the array
+                # swap, move to the next index
+
+
+                # if current number is greater than next element or equal
+                # move to the next element
+
+    
+            
+            
+                    
+            # if we stumble upon a None, swap, else if the value we  have is greater than the position we are at, swap
+            # we have to write that above that way because when it stumbles upon a None, it will stop, so i have to explicitly state if we reach it
+            # to still swap it 
+            # print(self._list,' the first time sorted list')
+                
+
+            
+                    
+                    
+
+
+
+
+
 
 
 if __name__ == "__main__":
@@ -107,6 +175,34 @@ if __name__ == "__main__":
     l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
 
     robot = SortingRobot(l)
-
     robot.sort()
-    print(robot._list)
+    print(robot._list, ' list after sort function called')
+
+
+
+
+
+
+
+                    # if self.can_move_right():  # if our current position attribute is less than the length of the array minus 1
+
+                #     if self.compare_item() == 1:
+
+                #         self.swap_item()
+                #         self.move_right()
+                #     else:
+
+                #         self.move_right()
+                    
+                # elif self.can_move_left():
+
+                #     if self.can_move_right() == False:
+
+                #         self.move_left()
+
+                #     elif self.compare_item() == 1:
+
+                #         self.swap_item()
+                #         self.move_left()
+                #     else:
+                #         self.move_left()
